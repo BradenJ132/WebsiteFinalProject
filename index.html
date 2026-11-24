@@ -28,7 +28,10 @@
                 class="btn-cirlce btn-primary btn-cirlce;"
                 style="width: 20px; height: 20px; border-radius: 45%"
                 id="checkButton1"
-              ></button>
+                onclick = "checkOff1()">
+               
+                
+              </button>
               <label>
                 <input
                   type="checklistbox"
@@ -37,44 +40,50 @@
                   placeholder="Enter Check"
                   name="checkBox1"
                   style="width: 200px; margin-left: 5px"
+                  onkeydown="if (event.key === 'Enter') writeTo1();"
                 />
               </label>
-              <p></p>
+              <p id = "Check1Save"></p>
               <!--checklist 2-->
               <button
                 type="button"
                 class="btn-cirlce btn-primary btn-cirlce"
                 style="width: 20px; height: 20px; border-radius: 45%"
                 id="checkButton2"
+                onclick = "checkOff2()" 
               ></button>
               <label>
                 <input
                   type="checklistbox"
                   class="form-control"
-                  id="CheckList_1"
+                  id="CheckList_2"
                   placeholder="Enter Check"
                   name="checkBox2"
                   style="width: 200px; margin-left: 5px"
+                   onkeydown="if (event.key === 'Enter') writeTo2();"
                 />
               </label>
-              <p></p>
+              <p id = Check2Save></p></p>
               <!--Checklist 3-->
               <button
                 type="button"
                 class="btn-cirlce btn-primary btn-cirlce mb-4"
                 style="width: 20px; height: 20px; border-radius: 45%"
                 id="checkButton3"
+                onclick = "checkOff3()"
               ></button>
               <label>
                 <input
                   type="checklistbox"
                   class="form-control"
-                  id="CheckList_1"
+                  id="CheckList_3"
                   placeholder="Enter Check"
                   name="checkBox3"
                   style="width: 200px; margin-left: 5px"
+                   onkeydown="if (event.key === 'Enter') writeTo3();"
                 />
               </label>
+              <p id = Check3Save></p></p>
             </div>
           </div>
         </div>
@@ -146,14 +155,33 @@
 </html>
 
 <script>
+// i realy wanted to make it only 1 function for each of the checklists but i dont understand how the passing of the ID's workvia the funcion
+  function writeTo1() {
+            let text = document.getElementById("CheckList_1").value;
+    document.getElementById("Check1Save").textContent =
+        text;   }
 
-  function deleteTextInBox()
+   function writeTo2() {
+            let text = document.getElementById("CheckList_2").value;
+    document.getElementById("Check2Save").textContent =
+        text;   }
+
+       function writeTo3() {
+            let text = document.getElementById("CheckList_3").value;
+    document.getElementById("Check3Save").textContent =
+        text;   }
+  
+  function checkOff1()
   {
-
+    document.getElementById("Check1Save").textContent = ""
   }
-  function checkOff() {
-    document.
-
+  function checkOff2()
+  {
+    document.getElementById("Check2Save").textContent = ""
+  }
+  function checkOff3()
+  {
+    document.getElementById("Check3Save").textContent = ""
   }
 </script>
 <!-- colors 

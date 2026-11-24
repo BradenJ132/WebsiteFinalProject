@@ -1,91 +1,56 @@
-<body style="background-color: #d2b189">
-    <!--Checklist Start-->
-   <div class="card mb-3;" style="width: 350px; padding: 10px 10px 10px 10px">
-      <div class="cardbody">
-        <h1 style="text-align: center">Checklist</h1>
-        <!--Checklist 1-->
-        <button
-          type="button"
-          class="btn-cirlce btn-primary btn-cirlce;"
-          style="width: 20px; height: 20px; border-radius: 45%"
-          id="checkButton1"
-        ></button>
-        <label>
-          <input
-            type="checklistbox"
-            class="form-control"
-            id="CheckList_1"
-            placeholder="Enter Check"
-            name="checkBox1"
-            style="width: 200px; margin-left: 5px"
-          />
-        </label>
-        <p></p>
-        <!--checklist 2-->
-        <button
-          type="button"
-          class="btn-cirlce btn-primary btn-cirlce"
-          style="width: 20px; height: 20px; border-radius: 45%"
-          id="checkButton2"
-        ></button>
-        <label>
-          <input
-            type="checklistbox"
-            class="form-control"
-            id="CheckList_1"
-            placeholder="Enter Check"
-            name="checkBox2"
-            style="width: 200px; margin-left: 5px"
-          />
-        </label>
-        <p></p>
-        <!--Checklist 3-->
-        <button
-          type="button"
-          class="btn-cirlce btn-primary btn-cirlce mb-4"
-          style="width: 20px; height: 20px; border-radius: 45%"
-          id="checkButton3"
-        ></button>
-        <label>
-          <input
-            type="checklistbox"
-            class="form-control"
-            id="CheckList_1"
-            placeholder="Enter Check"
-            name="checkBox3"
-            style="width: 200px; margin-left: 5px"
-          />
-        </label>
-      </div>
-    </div>
-    <!--Checklist End-->
 
-    <!--calender start-->
-    <div class="card mb-3" style="width: 400px">
-      <div class="cardbody">
-        <h1 style="text-align: center">Calender</h1>
-      </div>
-    </div>
-    <!--calender end-->
-    <div
-      class="container-fluid; position-absolute top-0 start-50 translate-middle-x"
-      style="width: 400px; background-color: white"
-    >
-      <div>
-        <h1 style="text-align: center">Notepad</h1>
-      </div>
-      <div class="form-group">
-        <label for="comment"> </label>
-        <textarea class="form-control" rows="10" id="comment"></textarea>
-      </div>
-    </div>
+javascript-practice.html
 
-    <div class="container-fluid; rows" style = "background-color: white; width: 400px;">
-      <div class = "col-sm-4">
-<h2> link1 </h2>
-      </div>
-<div class = "col-sm-4">
-<h2> link2 </h2>
-      </div>
-    </div>
-  </body>
+100%
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Practice Lab</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <main class="container py-4">
+        <h1>JavaScript Practice Lab</h1>
+        <p>Explore how a webpage responds to user actions.</p>
+
+        <section class="card p-4 mb-4" aria-labelledby="contentHeading">
+            <h2 id="contentHeading">Part 2: Change Content</h2>
+            <p id="message">Click the button to learn more.</p>
+            <button type="button" class="btn btn-primary" onclick="changeMessage()">Learn More</button>
+        </section>
+
+        <section class="card p-4 mb-4" aria-labelledby="formHeading">
+            <h2 id="formHeading">Part 3: Respond to Input</h2>
+            <form id="greetingForm" onsubmit="greetVisitor(); return false;">
+                <div class="mb-3">
+                    <label for="visitorName" class="form-label">Enter your name:</label>
+                    <input type="text" id="visitorName" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+            <p id="greeting" class="mt-3" aria-live="polite"></p>
+        </section>
+    </main>
+
+    <!-- jQuery: included for consistency with the earlier website module;
+         this lab uses plain JavaScript, not jQuery. -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Bootstrap 5 JavaScript bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Our JavaScript comes after the libraries and page content. -->
+    <script>
+        function changeMessage() {
+            document.getElementById("message").textContent =
+        "JavaScript makes websites interactive!";
+        }
+
+        function greetVisitor() {
+            let name = document.getElementById("visitorName").value;
+    document.getElementById("greeting").textContent =
+        "Welcome, " + name + "!";        }
+    </script>
+</body>
+</html>
