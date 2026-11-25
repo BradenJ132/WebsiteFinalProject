@@ -12,15 +12,16 @@
   </head>
 
   <body style="background-color: tan">
-    <div class="container-fluid;">
+    <div class="container-fluid;" >
       <div class="row">
         <!--Ckecklist container-->
         <div class="col-4">
           <div
             class="card mb-3;"
-            style="width: 350px; padding: 10px 10px 10px 10px"
+            style="width: 350px; padding: 10px 10px 10px 10px; background-color: #F7ECDD"
+            
           >
-            <div class="cardbody">
+            <div class="cardbody" >
               <h1 style="text-align: center">Checklist</h1>
               <!--Checklist 1-->
               <button
@@ -68,7 +69,7 @@
               <button
                 type="button"
                 class="btn-cirlce btn-primary btn-cirlce mb-4"
-                style="width: 20px; height: 20px; border-radius: 45%"
+                style="width: 20px; height: 20px; border-radius: 45%; "
                 id="checkButton3"
                 onclick = "checkOff3()"
               ></button>
@@ -79,7 +80,7 @@
                   id="CheckList_3"
                   placeholder="Enter Check"
                   name="checkBox3"
-                  style="width: 200px; margin-left: 5px"
+                  style="width: 200px; margin-left: 5px; "
                    onkeydown="if (event.key === 'Enter') writeTo3();"
                 />
               </label>
@@ -87,14 +88,22 @@
             </div>
           </div>
         </div>
-
-        <div class="col-4" style="width: 400px; background-color: white">
+<!--Notepad start-->
+        <div class="col-4" style="width: 400px; background-color: #F7ECDD">
           <div>
             <h1 style="text-align: center">Notepad</h1>
+            <button
+                type="button"
+                class="btn-cirlce btn-primary btn-cirlce mb-4"
+                style="width: 20px; height: 20px; border-radius: 45%"
+                id="checkButton3"
+                onclick = "removeNotePad()"
+              ></button>
           </div>
-          <div class="form-group">
+          <div class="form-group" >
             <label for="comment"> </label>
-            <textarea class="form-control" rows="10" id="comment"></textarea>
+            <textarea class="form-control" rows="10" id = "NotePadBox"></textarea>
+            
           </div>
         </div>
         <!--links division-->
@@ -102,15 +111,15 @@
 
           <div class="col-6 mb-4">
             <div class="card" >
-              <div class="cardbody" style = "text-align: center;">
-                <h4>google docs<h4>
+              <div class="cardbody" style = "text-align: center; background-color: #F7ECDD">
+                <h4> <a href = "https://docs.google.com/document/u/0/">google docs</a><h4>
               </div>
             </div>
           </div>
 <div class="col-6">
             <div class="card">
-              <div class="cardbody" style = "text-align: center;">
-                <h4>google drive<h4>
+              <div class="cardbody" style = "text-align: center; background-color: #F7ECDD">
+                <h4> <a href = "https://drive.google.com/drive/my-drive?dmr=1&ec=wgc-drive-%5Bmodule%5D-goto">google drive</a><h4>
               </div>
             </div>
           </div>
@@ -120,14 +129,15 @@
 
           <div class="col-6 mb-4">
             <div class="card">
-              <div class="cardbody" style = "text-align: center;">
-                <h2>MSU<h2>
+              <div class="cardbody" style = "text-align: center; background-color: #F7ECDD">
+                <h2> <a href = "https://www.msudenver.edu/studenthub/">MSU</a><h2>
+                  
               </div>
             </div>
           </div>
 <div class="col-6">
             <div class="card">
-              <div class="cardbody" style = "text-align: center;">
+              <div class="cardbody" style = "text-align: center; background-color: #F7ECDD">
                 <h2>link4<h2>
               </div>
             </div>
@@ -137,7 +147,7 @@
     </div>
     <div class="row">
       <div class="col-4">
-        <div class="card mb-3" style="width: 400px">
+        <div class="card mb-3" style="width: 400px; background-color: #F7ECDD">
           <div class="cardbody">
             <h1 style="text-align: center">Calender</h1>
           </div>
@@ -183,6 +193,13 @@
   {
     document.getElementById("Check3Save").textContent = ""
   }
+
+  function removeNotePad()
+  {
+document.getElementById("NotePadBox").value = ""
+  }
+
+ 
 </script>
 <!-- colors 
  tan = #D2B189
